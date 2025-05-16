@@ -1,0 +1,37 @@
+create table rol(
+id_rol int identity (1,1),
+nombre_rol varchar (40),
+constraint pk_rol primary key (id_rol)
+);
+
+create table ciudad(
+id_ciudad int identity (1,1),
+nombre_ciudad varchar (40),
+constraint pk_ciudad primary key (id_ciudad),
+
+);
+
+create table tipo_cliente(
+id_tipo_cliente int identity (1,1),
+nombre_tipo_cliente varchar (40),
+constraint pk_tipo_cliente primary key (id_tipo_cliente),
+);
+
+create table cliente(
+id_cliente varchar (50),
+nombre_cliente varchar (50),
+apellido_cliente varchar (50),
+edad int not null,
+telefono varchar (50),
+correo varchar (50),
+id_ciudad int,
+id_tipo_cliente int,
+id_rol int,
+constraint pk_cliente primary key (id_cliente),
+constraint fk_ciudad foreign key (id_ciudad)
+references ciudad (id_ciudad),
+constraint fk_tipo_cliente foreign key (id_tipo_cliente)
+references tipo_cliente (id_tipo_cliente),
+constraint fk_rol foreign key (id_rol)
+references rol (id_rol),
+);
