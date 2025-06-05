@@ -232,3 +232,6 @@ values
 ('1017148956', 'Rahul', 'Been Forner', 2, 3);
 
 
+select * from cliente;
+select * from productos;
+
